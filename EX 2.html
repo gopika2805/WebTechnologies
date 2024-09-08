@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Types Example - Hardware Devices</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(220, 236, 69);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: rgb(179, 13, 41);
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2 {
+            color: rgb(47, 3, 56);
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: auto;
+            display: block;
+            border-color: rgb(168, 69, 11);
+        }
+        .styled-image {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgba(201, 198, 14, 0.5);
+            border: 5px solid rgb(172, 169, 22);
+        }
+    </style>
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Inline CSS -->
+    <div style="background-color: white; padding: 20px; margin: 20px;">
+        <h1 style="color: rgb(5, 82, 37);">WELCOME TO OUR HARDWARE SHOWCASE!</h1>
+    </div>
+
+    <div style="text-align: center;">
+        <img src="Samsung-laptop.jpg" alt="laptop" class="styled-image" usemap="#hardware-map">
+        <img src="smartphones.jpg" alt="smartphones" class="styled-image" usemap="#hardware-map">
+    </div>
+
+    <map name="hardware-map">
+        <area shape="rect" coords="50,50,350,250" alt="Laptops" href="https://i.pinimg.com/originals/1b/24/66/1b2466ad57c9ce45ab273527c5165624.png">
+        <area shape="rect" coords="400,50,700,250" alt="Smartphones" href="https://www.techcityng.com/wp-content/uploads/2013/12/2013-smartphones-wallpaper.jpg">
+    </map>
+
+    <div class="image-container">
+        <p style="color:rgb(231, 82, 13);font-size: 18px;"><i>Laptops and Smartphones</i></p>
+    </div>
+
+    <div style="background-color: white; padding: 20px; margin: 20px;">
+        <h1>ABOUT HARDWARE DEVICES</h1>
+        <h2>Exploring Different Types of Hardware Devices</h2>
+        <p style="color: blue; font-size: 20px;"><strong>Hardware devices</strong> are the backbone of modern computing. From laptops that power productivity to smartphones that keep us connected, hardware devices have revolutionized the way we live and work.</p>
+        <p style="color: rgb(71, 13, 71); font-size: 20px;">Our showcase highlights the latest trends in technology, focusing on key categories such as laptops, smartphones, tablets, and more. Discover the cutting-edge features that make these devices essential tools in our daily lives.</p>
+    </div>
+
+</body>
+</html>
