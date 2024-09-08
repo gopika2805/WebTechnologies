@@ -1,0 +1,74 @@
+/* General styling for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(220, 236, 69);
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading styles */
+h1 {
+    color: rgb(179, 13, 41);
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    color: rgb(47, 3, 56);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling the main content container */
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+/* Image container styling */
+.image-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Styling the images used */
+.styled-image {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(201, 198, 14, 0.5);
+    border: 5px solid rgb(172, 169, 22);
+}
+
+/* Text within the image container */
+.image-container p {
+    color: rgb(231, 82, 13);
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Paragraph styles */
+p {
+    color: rgb(71, 13, 71);
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Strong emphasis within paragraphs */
+strong {
+    color: blue;
+    font-weight: bold;
+}
+
+/* Links within the page */
+a {
+    color: rgb(5, 82, 37);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(179, 13, 41);
+    text-decoration: underline;
+}
