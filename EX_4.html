@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Device Registration Form</title>
+    <link rel="stylesheet" href="style1.css">
+    <script>
+      function validateForm() {
+          const deviceName = document.getElementById('deviceName').value.trim();
+          const deviceCategory = document.getElementById('deviceCategory').value;
+          const manufacturer = document.getElementById('manufacturer').value.trim();
+          const model = document.getElementById('model').value.trim();
+          const price = document.getElementById('price').value.trim();
+          const warrantyYes = document.querySelector('input[name="warranty"][value="yes"]').checked;
+          const warrantyNo = document.querySelector('input[name="warranty"][value="no"]').checked;
+          const description = document.getElementById('description').value.trim();
+          const features = document.getElementById('features').value;
+          const serialNumber = document.getElementById('serialNumber').value.trim();
+          const proof = document.getElementById('proof').value;
+
+          // New fields
+          const city = document.getElementById('city').value.trim();
+          const state = document.getElementById('state').value;
+          const zip = document.getElementById('zip').value.trim();
+
+          // Device Name validation
+          if (deviceName === '') {
+              alert('Device name is required.');
+              return false;
+          }
+
+          // Category validation
+          if (deviceCategory === '') {
+              alert('Please select a category.');
+              return false;
+          }
+
+          // Manufacturer validation
+          if (manufacturer === '') {
+              alert('Manufacturer is required.');
+              return false;
+          }
+
+          // Model validation
+          if (model === '') {
+              alert('Model is required.');
+              return false;
+          }
+
+          // Price validation
+          if (price === '' || isNaN(price)) {
+              alert('Please enter a valid price.');
+              return false;
+          }
+
+          // Warranty validation
+          if (!warrantyYes && !warrantyNo) {
+              alert('Please indicate if the device has a warranty.');
+              return false;
+          }
+
+          // Description validation
+          if (warrantyYes && description === '') {
+              alert('Please describe the warranty details.');
+              return false;
+          }
+
+          // Features validation
+          if (features === '') {
+              alert('Please select a feature.');
+              return false;
+          }
+
+          // Serial number validation
+          if (serialNumber === '') {
+              alert('Serial number is required.');
+              return false;
+          }
+
+          // ID proof validation
+          if (proof === '') {
+              alert('Please upload a document proof for the device.');
+              return false;
+          }
+
+          // City validation
+          if (city === '') {
+              alert('City is required.');
+              return false;
+          }
+
+          // State validation
+          if (state === '') {
+              alert('Please select a state.');
+              return false;
+          }
+
+          // Zip code validation
+          const zipPattern = /^[0-9]{5}$/;
+          if (zip === '') {
+              alert('Zip code is required.');
+              return false;
+          } else if (!zip.match(zipPattern)) {
+              alert('Please enter a valid 5-digit zip code.');
+              return false;
+          }
+
+          // If all validations pass
+          alert('Form submitted successfully!');
+          return true;
+      }
+    </script>
+</head>
+<body>
+
+<h2>Hardware Device Registration Form</h2>
+
+<form id="myForm" onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="deviceName">Device Name:</label>
+        <input type="text" id="deviceName" name="deviceName" placeholder="Enter the device name">
+    </div>
+
+    <div class="form-group">
+        <label for="deviceCategory">Device Category:</label>
+        <select id="deviceCategory" name="deviceCategory">
+            <option value="">Select</option>
+            <option value="Computing">Computing</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Networking">Networking</option>
+            <option value="Peripheral">Peripheral</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" id="manufacturer" name="manufacturer" placeholder="Enter the manufacturer">
+    </div>
+
+    <div class="form-group">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" placeholder="Enter the model number">
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" placeholder="Enter the price in USD">
+    </div>
+
+    <div class="form-group">
+        <label>Warranty Available?:</label>
+        <input type="radio" name="warranty" value="yes"> Yes
+        <input type="radio" name="warranty" value="no"> No
+    </div>
+
+    <div class="form-group">
+        <label for="description">If yes, describe warranty details:</label>
+        <textarea id="description" name="description" rows="4" placeholder="Describe the warranty details"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="features">Key Features:</label>
+        <select id="features" name="features">
+            <option value="">Select</option>
+            <option value="High Performance">High Performance</option>
+            <option value="Durable">Durable</option>
+            <option value="Energy Efficient">Energy Efficient</option>
+            <option value="Lightweight">Lightweight</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="serialNumber">Serial Number:</label>
+        <input type="text" id="serialNumber" name="serialNumber" placeholder="Enter the serial number">
+    </div>
+
+    <div class="form-group">
+        <label for="proof">Upload ID proof:</label>
+        <input type="file" id="proof">
+    </div>
+
+    <!-- New fields -->
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city">
+    </div>
+
+    <div class="form-group">
+        <label for="state">State:</label>
+        <select id="state" name="state">
+            <option value="">Choose...</option>
+            <option value="CA">California</option>
+            <option value="TX">Texas</option>
+            <option value="NY">New York</option>
+            <!-- Add other states as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" placeholder="Enter your zip code" maxlength="5">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
