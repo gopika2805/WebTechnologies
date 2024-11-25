@@ -3,45 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style5.css">
-</head>
+    <title>Hardware Devices Application</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container-wrapper {
+            padding: 20px;
+        }
+        .device-category {
+            margin: 10px 0;
+        }
+        .category-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .category-header:hover {
+            background-color: #0056b3;
+        }
+        .device-details {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>  
 <body>
     <div class="container-wrapper">
-        <div id="time1">
-            <button id="showTimeButton">Show Current Time</button>
-            <div id="time"></div>
+        <h1>Types of Hardware Devices</h1>
+        <div id="categories">
+            <div class="device-category" id="inputDevices">
+                <div class="category-header">Input Devices</div>
+                <div class="device-details">
+                    <ul>
+                        <li>Keyboard</li>
+                        <li>Mouse</li>
+                        <li>Scanner</li>
+                        <li>Microphone</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="device-category" id="outputDevices">
+                <div class="category-header">Output Devices</div>
+                <div class="device-details">
+                    <ul>
+                        <li>Monitor</li>
+                        <li>Printer</li>
+                        <li>Speakers</li>
+                        <li>Projector</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="device-category" id="storageDevices">
+                <div class="category-header">Storage Devices</div>
+                <div class="device-details">
+                    <ul>
+                        <li>Hard Drive</li>
+                        <li>Solid State Drive</li>
+                        <li>USB Flash Drive</li>
+                        <li>Memory Card</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <img src="flower 5ex.jpg" alt="flower jpg" class="image">
-            <div class="text">Hey there, I'm here!!</div>
-        </div>
-        <div id="hoverText">Hover here</div>
     </div>
 
     <script>
-        let interval;
+        const categories = document.querySelectorAll('.device-category');
 
-        document.getElementById('showTimeButton').addEventListener('click', function() {
-            clearInterval(interval);
-            updateTime();
-            interval = setInterval(updateTime, 1000);
-        });
+        categories.forEach(category => {
+            const header = category.querySelector('.category-header');
+            const details = category.querySelector('.device-details');
 
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString();
-            document.getElementById('time').textContent = timeString;
-        }
-
-        const hoverText = document.getElementById('hoverText');
-
-        hoverText.addEventListener('mouseenter', () => {
-            hoverText.textContent = 'Mouse In';
-        });
-
-        hoverText.addEventListener('mouseleave', () => {
-            hoverText.textContent = 'Mouse Out';
+            header.addEventListener('click', () => {
+                // Toggle visibility
+                const isVisible = details.style.display === 'block';
+                details.style.display = isVisible ? 'none' : 'block';
+            });
         });
     </script>
 </body>
