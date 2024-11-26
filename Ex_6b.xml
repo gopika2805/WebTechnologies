@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hardware_devices>
+    <device>
+        <id>1</id>
+        <name>Keyboard</name>
+        <type>Input</type>
+        <description>A device to input text and commands</description>
+    </device>
+    <device>
+        <id>2</id>
+        <name>Monitor</name>
+        <type>Output</type>
+        <description>A device to display output to the user</description>
+    </device>
+    <device>
+        <id>3</id>
+        <name>Hard Drive</name>
+        <type>Storage</type>
+        <description>A device to store data</description>
+    </device>
+</hardware_devices>
