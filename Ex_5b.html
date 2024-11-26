@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Devices</title>
+</head>
+<body>
+    <h1>Hardware Devices Information Center</h1>
+    <p>Select a hardware device to learn more about it:</p>
+
+    <form action="DeviceServlet" method="GET">
+        <label for="device">Choose a device:</label>
+        <select name="device" id="device">
+            <option value="keyboard">Keyboard</option>
+            <option value="mouse">Mouse</option>
+            <option value="monitor">Monitor</option>
+            <option value="printer">Printer</option>
+        </select>
+        <button type="submit">Get Details</button>
+    </form>
+</body>
+</html>
